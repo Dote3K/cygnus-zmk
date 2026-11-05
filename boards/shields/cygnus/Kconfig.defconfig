@@ -27,6 +27,11 @@ config ZMK_IDLE_SLEEP_TIMEOUT
 config ZMK_BATTERY_REPORT_INTERVAL
     default 300
 
+# one step below the 0 dBm default; -4 is the smallest step the nRF52840 radio has
+choice BT_CTLR_TX_PWR
+    default BT_CTLR_TX_PWR_MINUS_4
+endchoice
+
 endif
 
 if SHIELD_CYGNUS_DONGLE
