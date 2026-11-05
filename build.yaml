@@ -13,18 +13,11 @@ include:
     shield: cygnus_dongle jetmk_display raw_hid_adapter
     snippet: zmk-usb-logging
     artifact-name: cygnus_dongle_debug
-  # bisect the usb / crash issue: one module at a time, all with logging
-  - board: nice_nano//zmk
-    shield: cygnus_dongle
-    snippet: zmk-usb-logging
-    artifact-name: dbg_plain
-  - board: nice_nano//zmk
-    shield: cygnus_dongle raw_hid_adapter
-    snippet: zmk-usb-logging
-    artifact-name: dbg_rawhid
+  # jetmk display only, with per-thread cpu / stack usage every 5 s
   - board: nice_nano//zmk
     shield: cygnus_dongle jetmk_display
     snippet: zmk-usb-logging
+    cmake-args: -DCONFIG_THREAD_ANALYZER=y -DCONFIG_THREAD_ANALYZER_AUTO=y -DCONFIG_THREAD_ANALYZER_AUTO_INTERVAL=5 -DCONFIG_THREAD_ANALYZER_USE_LOG=y -DCONFIG_THREAD_RUNTIME_STATS=y -DCONFIG_THREAD_NAME=y -DCONFIG_LOG_MODE_OVERFLOW=n -DCONFIG_LOG_BLOCK_IN_THREAD=y
     artifact-name: dbg_jetmk
   - board: nice_nano//zmk
     shield: settings_reset
