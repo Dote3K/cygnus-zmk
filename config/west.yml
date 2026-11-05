@@ -2,10 +2,15 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: dote3k
+      url-base: https://github.com/Dote3K
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
+    - name: JetMK
+      remote: dote3k
+      revision: main
   self:
     path: config
