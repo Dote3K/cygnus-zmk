@@ -51,4 +51,8 @@ config BT_MAX_CONN
 config BT_MAX_PAIRED
     default 7
 
+# the dongle never sleeps; idle only turns the screen and backlight off, after 15 min without typing
+config ZMK_IDLE_TIMEOUT
+    default 900000
+
 endif
