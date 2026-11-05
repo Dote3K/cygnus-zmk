@@ -13,6 +13,19 @@ include:
     shield: cygnus_dongle jetmk_display raw_hid_adapter
     snippet: zmk-usb-logging
     artifact-name: cygnus_dongle_debug
+  # bisect the usb / crash issue: one module at a time, all with logging
+  - board: nice_nano//zmk
+    shield: cygnus_dongle
+    snippet: zmk-usb-logging
+    artifact-name: dbg_plain
+  - board: nice_nano//zmk
+    shield: cygnus_dongle raw_hid_adapter
+    snippet: zmk-usb-logging
+    artifact-name: dbg_rawhid
+  - board: nice_nano//zmk
+    shield: cygnus_dongle jetmk_display
+    snippet: zmk-usb-logging
+    artifact-name: dbg_jetmk
   - board: nice_nano//zmk
     shield: settings_reset
     artifact-name: settings_reset
