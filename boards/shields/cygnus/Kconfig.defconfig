@@ -16,6 +16,14 @@ config BT_MAX_CONN
 config BT_MAX_PAIRED
     default 1
 
+# battery: halves deep-sleep after 15 min without key presses and wake on the next press
+# (the matrix is a wakeup-source); the USB-powered dongle never sleeps
+config ZMK_SLEEP
+    default y
+
+config ZMK_IDLE_SLEEP_TIMEOUT
+    default 900000
+
 endif
 
 if SHIELD_CYGNUS_DONGLE
