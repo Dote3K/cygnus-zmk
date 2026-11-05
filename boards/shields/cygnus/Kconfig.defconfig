@@ -24,6 +24,9 @@ config ZMK_SLEEP
 config ZMK_IDLE_SLEEP_TIMEOUT
     default 900000
 
+config ZMK_BATTERY_REPORT_INTERVAL
+    default 300
+
 endif
 
 if SHIELD_CYGNUS_DONGLE
