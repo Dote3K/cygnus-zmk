@@ -8,6 +8,11 @@ include:
   - board: nice_nano//zmk
     shield: cygnus_dongle jetmk_display raw_hid_adapter
     artifact-name: cygnus_dongle
+  # same dongle with logs over a USB serial port, for debugging
+  - board: nice_nano//zmk
+    shield: cygnus_dongle jetmk_display raw_hid_adapter
+    snippet: zmk-usb-logging
+    artifact-name: cygnus_dongle_debug
   - board: nice_nano//zmk
     shield: settings_reset
     artifact-name: settings_reset
